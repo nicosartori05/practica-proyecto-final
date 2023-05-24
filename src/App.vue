@@ -8,7 +8,7 @@ const flag = true;
 
 <div class="container">
     
-    <header>
+    <!-- <header>
      <template v-if="!flag">
         <h1>LOGO</h1>
         <nav>
@@ -26,15 +26,15 @@ const flag = true;
         </nav>
       </template>
     </header>
-    
+     -->
     <main>
         <router-view></router-view>
     </main>
-    <template v-if="!flag">
+    <!-- <template v-if="!flag">
       <footer>
         <p>&copy; Nicolas Sartori</p>
       </footer>
-    </template>
+    </template> -->
   </div>
 
 
@@ -47,10 +47,11 @@ const flag = true;
   grid-template-rows: auto 1fr auto;
   height: 100vh;
 }
-header{
+/* header{
   grid-row: 1;
-}
+} */
 main{
+padding: 1rem;
   grid-row: 2;
 }
 footer{
