@@ -9,22 +9,22 @@ const flag = true;
 <div class="container">
     
     <header>
-  <template v-if="!flag">
-      <h1>LOGO</h1>
-      <nav>
-        <ul>
-          <li>
-            <router-link to="/home">Home</router-link>
-          </li>
-          <li>
-            <router-link to="/register">Registro</router-link>
-          </li>
-          <li>
-            <router-link to="/login">Iniciar sesion</router-link>
-          </li>
-        </ul>
-      </nav>
-    </template>
+     <template v-if="!flag">
+        <h1>LOGO</h1>
+        <nav>
+          <ul>
+            <li>
+              <router-link to="/home">Home</router-link>
+            </li>
+            <li>
+              <router-link to="/register">Registro</router-link>
+            </li>
+            <li>
+              <router-link to="/login">Iniciar sesion</router-link>
+            </li>
+          </ul>
+        </nav>
+      </template>
     </header>
     
     <main>

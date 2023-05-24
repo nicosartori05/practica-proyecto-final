@@ -10,8 +10,16 @@ function useRegister() {
   const fields = ref({
     email: "",
     password: "",
-    nombre: "",
-    apellido: ""
+    nombre: "", // Nuevo campo: Nombre
+    apellido: "", // Nuevo campo: Apellido
+    nacimiento: "", // Nuevo campo: Nacimiento
+    nivel: "", // Nuevo campo: Nivel
+    genero: "", // Nuevo campo: Género
+    pais: "", // Nuevo campo: País
+    ciudad: "", // Nuevo campo: Ciudad
+    barrio: "", // Nuevo campo: Barrio
+    telefono: "", // Nuevo campo: Teléfono
+    terminos: false,
   });
   const loading = ref(false);
 
@@ -62,99 +70,101 @@ function useRegister() {
             <input type="password" id="contraseña" name="contraseña" placeholder="Contraseña"  v-model="fields.password"/>
           </div>
 
-          <!-- <div class="row">
+          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Nacimiento</label>
+              <label for="nacimiento">Nacimiento</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <input type="date" class="" placeholder="Contraseña" />
+              <input type="date" class="" name="nacimiento" placeholder="Contraseña" v-model="fields.nacimiento"/>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Nivel de juego:</label>
+              <label for="nivel">Nivel de juego:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <select name="" id="">
-                <option value="">seleccionar</option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="nivel" id="nivel" v-model="fields.nivel">
+                <option value="" disabled>seleccionar</option>
+                <option value="alto">Alto</option>
+                <option value="medio">Medio</option>
+                <option value="bajo">Bajo</option>
               </select>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Genero:</label>
+              <label for="genero">Genero:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <select name="" id="">
-                <option value="">seleccionar</option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="genero" id="genero" v-model="fields.genero">
+                <option value="" disabled>seleccionar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+                <option value="Prefiero no decir">Prefiero no decir</option>
               </select>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Pais:</label>
+              <label for="pais">Pais:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <select name="" id="">
-                <option value="">seleccionar</option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="pais" id="pais" v-model="fields.pais">
+                <option value="" disabled>seleccionar</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Uruguay">Uruguay</option>
               </select>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Ciudad:</label>
+              <label for="ciudad">Ciudad:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <select name="" id="">
-                <option value="">seleccionar</option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="ciudad" id="ciudad" v-model="fields.ciudad">
+                <option value="" disabled>seleccionar</option>
+                <option value="Buenos Aires">buenos aires</option>
+                <!-- <option value=""></option> -->
               </select>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Barrio:</label>
+              <label for="barrio">Barrio:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <select name="" id="">
-                <option value="">seleccionar</option>
-                <option value=""></option>
-                <option value=""></option>
+              <select name="barrio" id="barrio" v-model="fields.barrio">
+                <option value="" disabled>seleccionar</option>
+                <option value="Palermo">Palermo</option>
+                <option value="Recoleta">Recoleta</option>
               </select>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-2">
-              <label for="">Telefono:</label>
+              <label for="telefono">Telefono:</label>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-10">
-              <input type="text" placeholder="+54" />
+              <input type="text" placeholder="+54" name="telefono" v-model="fields.telefono"/>
             </div>
           </div>
 
           <div class="row">
             <div class="col-xs-2 col-sm-2 col-md-4">
-              <input type="checkbox" name="" id="" />
+              <input type="checkbox" name="terminos" id="terminos" v-model="fields.terminos"/>
             </div>
             <div class="col-xs-10 col-sm-10 col-md-8">
               <label for=""
                 >Acepto los <a href="">terminos y condiciones</a> de uso.</label
               >
             </div>
-          </div>-->
+          </div>
         </div> 
         <div class="col-xs-12 col-sm-12 col-md-12">
           <button class="btn" >REGISTRARME</button>
